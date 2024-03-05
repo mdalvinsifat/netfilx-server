@@ -4,19 +4,20 @@ const dotenv = require("dotenv")
 const ConnectDB = require("./ConnectDB/Connect")
 const router = require("./route/Route")
 
-// const corsConfig ={
-//     origin:"",
-//     credential:true,
-//     methods:["GET", "POST", "PUT", "DELETE"],
-// }
+
 const app = express()
 app.use(express.json())
 dotenv.config()
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://server-site-6uoawwixr-alvin-sifats-projects.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 
-// app.use(cors())
 app.get("/", (req, res) => {
-    res.json("Hello");
+    res.json("gello");
 })
 
 app.use("/api/v1",router)

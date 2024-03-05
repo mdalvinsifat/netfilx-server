@@ -11,6 +11,6 @@ router.post("/register", Register)
 router.post("/login", Login)
 router.get("/getLogin", LogOut)
 
-// "methods":["GET", "PUT ", "POST ", "DELTE", "PATCH" , "OPTIONS"]
+
 
 module.exports = router
