@@ -2,15 +2,19 @@ const express = require("express")
 const cors = require("cors")
 const dotenv = require("dotenv")
 const ConnectDB = require("./ConnectDB/Connect")
-const router = require("./route/route")
+const router = require("./route/Route")
 
-
+// const corsConfig ={
+//     origin:"",
+//     credential:true,
+//     methods:["GET", "POST", "PUT", "DELETE"],
+// }
 const app = express()
 app.use(express.json())
 dotenv.config()
 app.use(cors())
 
-
+// app.use(cors())
 app.get("/", (req, res) => {
     res.json("Hello");
 })
