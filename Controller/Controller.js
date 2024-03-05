@@ -79,4 +79,19 @@ const Login = async(req, res) =>{
     }
 }
 
-module.exports = {Register, Login}
+
+
+const LogOut = async(req, res) =>{
+    try {
+        const product = await User.find()
+        res.status(200).send({
+            success:"true",
+            message:"user Login successfully ",
+            product
+        })
+    } catch (error) {
+        
+    }
+}
+
+module.exports = {Register, Login , LogOut}
